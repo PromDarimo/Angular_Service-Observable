@@ -8,6 +8,7 @@ import { ObservibleService } from './service/observable.service';
 })
 export class AppComponent {
   data: any;
+  errorMsg : any;
   constructor(
     private api : ObservibleService
   ){  }
@@ -16,6 +17,8 @@ export class AppComponent {
     this.api.getData().subscribe(res =>{
       this.data = res;
       console.log(this.data);
+    }, error => {
+      this.errorMsg = error;
     });
   }
 }
