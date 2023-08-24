@@ -10,7 +10,7 @@ export class ObservibleService {
   ) { }
 
   getData(): Observable<any[]>{ //observable type any array
-    return this.api.get<any[]>('/assets/data1.json')
+    return this.api.get<any[]>('/assets/data.json')
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError)
